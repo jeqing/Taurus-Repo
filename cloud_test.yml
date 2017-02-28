@@ -1,12 +1,13 @@
 ---
 execution:
-- concurrency: 1500
+- concurrency: 1000
   hold-for: 20m
   ramp-up: 10m
   locations:
     us-east-1: 2
     us-west-1: 2
     us-east-2: 2
+    eu-west-1: 2
   locations-weighted: false
   scenario: Thread Group
 scenarios:

@@ -1,0 +1,6 @@
+---
+modules:
+  blazemeter:
+    token: pxj53ohodj64ldpho5sw
+    test: Taurus cloud Test
+    project: My Taurus Project

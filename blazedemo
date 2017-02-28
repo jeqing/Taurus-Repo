@@ -1,0 +1,17 @@
+---
+execution: 
+  - scenario: blazedemo 
+    concurrency: 10000
+    ramp-up: 2m
+    hold-for: 10m
+    locations: 
+      eu-central-1: 2
+      eu-west-1: 2
+      us-east-1: 2
+      us-west-1: 2
+      us-west-2: 2
+provisioning: cloud
+
+scenarios:
+  blazedemo:
+    script: blazedemo.jmx

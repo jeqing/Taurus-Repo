@@ -1,8 +1,15 @@
 ---
 execution:
-   concurrency: 20
-   hold-for: 7m
-   ramp-up: 60s
+   concurrency: 10000
+   hold-for: 10m
+   ramp-up: 2m
+   locations: 
+      eu-central-1: 1
+      eu-west-1: 1
+      us-east-1: 1
+      us-west-1: 1
+      us-west-2: 1
+provisioning: cloud
    scenario:
       requests:
          - url: http://blazedemo.com/

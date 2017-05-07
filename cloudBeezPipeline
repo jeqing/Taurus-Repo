@@ -1,0 +1,21 @@
+node {
+   stage('Build') {
+      // Run the Taurus build
+   }
+   stage('Performance Tests') { //for display purposes
+      // Get some code from a GitHub repository
+    sh 'git clone https://github.com/guysalton/Taurus-Repo/'
+    parallel(
+        BlazeMeterTest: {
+        dir ('Taurus-Repo') {
+        sh 'bzt cloud_test.yml blazemeter_api_key.yml --option=modules.console.disable=true -cloud'
+        }
+        }
+        , Analysis: {sleep 60})
+  
+   }
+   stage('Results') {
+   //junit '**/target/surefire-reports/TEST-*.xml'
+   //archive 'target/*.jar'
+   }
+}
